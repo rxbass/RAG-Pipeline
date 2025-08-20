@@ -1,10 +1,10 @@
 import streamlit as st
-import dotenv
+#import dotenv
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import FAISS
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 import os
 from langchain.chains import RetrievalQA
@@ -24,8 +24,8 @@ def initialize_system():
     """Initialize the document processing system"""
     with st.spinner("Initializing system..."):
         # Load Enivornment Variables
-        load_dotenv()
-        os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+        #load_dotenv()
+        os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
         # Load the document
         loader = TextLoader("data/unstructured_contract_sample.txt")
