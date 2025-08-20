@@ -124,7 +124,7 @@ def main():
         """)
         
         # Direct similarity search option
-        st.subheader("Direct Document Search - top 3 most similar results")
+        st.subheader("Similarity Search - top 3 most similar results")
         search_term = st.text_input("Search for specific terms in the document:")
         if st.button("Search Document"):
             if search_term:
